@@ -14,7 +14,7 @@ import net.minecraft.util.StatCollector;
 
 public class Ore {
 
-	public static final ArrayList<Ore> ores = new ArrayList<Ore>();
+	public static final ArrayList<Ore> ores = new ArrayList<>();
 
 	private static final Map<String, String> defaultOres = new HashMap<String, String>();
 	private static final Map<String, Color> defaultOreColours = new HashMap<String, Color>();

@@ -107,7 +107,7 @@ public class AOBD {
 
 		// Register icons for molten metals
 		if (event.map.getTextureType() == 0)
-			if (CompatType.TINKERS_CONSTRUCT.isEnabled() || CompatType.MARICULTURE.isEnabled())
+			if (CompatType.MARICULTURE.isEnabled())
 				RecipesModule.registerMoltenMetalIcons(event.map);
 	}
 

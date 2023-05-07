@@ -14,18 +14,14 @@ import ganymedes01.aobd.recipes.modules.GanysNether;
 import ganymedes01.aobd.recipes.modules.Hydraulicraft;
 import ganymedes01.aobd.recipes.modules.ImmersiveEngineering;
 import ganymedes01.aobd.recipes.modules.IndustrialCraft;
-import ganymedes01.aobd.recipes.modules.Magneticraft;
 import ganymedes01.aobd.recipes.modules.Mariculture;
 import ganymedes01.aobd.recipes.modules.Mekanism;
 import ganymedes01.aobd.recipes.modules.ModularSystems;
 import ganymedes01.aobd.recipes.modules.NetherOres;
 import ganymedes01.aobd.recipes.modules.Railcraft;
-import ganymedes01.aobd.recipes.modules.RandomAdditions;
 import ganymedes01.aobd.recipes.modules.SimpleOreGrinder;
-import ganymedes01.aobd.recipes.modules.Steamcraft;
 import ganymedes01.aobd.recipes.modules.Thaumcraft;
 import ganymedes01.aobd.recipes.modules.ThermalExpansion;
-import ganymedes01.aobd.recipes.modules.TinkersConstruct;
 
 public enum CompatType {
 
@@ -36,22 +32,18 @@ public enum CompatType {
 	THAUMCRAFT("Thaumcraft", Thaumcraft.class, "cluster", "nugget"),
 	THERMAL_EXPANSION("ThermalExpansion", ThermalExpansion.class, "dust"),
 	FACTORISATION("factorization", Factorization.class, "crystalline", "cleanGravel", "reduced", "dirtyGravel"),
-	RANDOM_ADDITIONS("randomadditions", RandomAdditions.class, "dust"),
 	GANYS_NETHER("ganysnether", GanysNether.class, "nugget"),
 	MODULAR_SYSTEMS("modularsystems", ModularSystems.class, "dust"),
 	NETHER_ORES("NetherOres", NetherOres.class, "ore"),
 	APPLIED_ENERGISTICS("appliedenergistics2", AppliedEnergistics.class, "dust"),
 	HYDRAULICRAFT("HydCraft", Hydraulicraft.class, "dust", "chunk"),
-	TINKERS_CONSTRUCT("TConstruct", TinkersConstruct.class, "block"),
 	SIMPLE_ORE_GRINDER("simpleoregrinder", SimpleOreGrinder.class, "dust"),
-	STEAMCRAFT("Steamcraft", Steamcraft.class, "dust"),
 	BC_ADDITIONS("bcadditions", BuildCraftAdditions.class, "dust"),
 	ELECTRICAL_AGE("Eln", ElectricalAge.class, "dust"),
 	AURA_CASCADE("aura", AuraCascade.class, "dust"),
 	ENGINEERS_TOOLBOX("eng_toolbox", EngineersToolbox.class, "ground", "dustImpure", "dust"),
 	IMMERSIVE_ENGINEERING("ImmersiveEngineering", ImmersiveEngineering.class, "dust"),
 	MARICULTURE("Mariculture", Mariculture.class, "dust", "nugget", "block"),
-	MAGNETICRAFT("Magneticraft", Magneticraft.class, "chunk", "dust", "rubble", "pebbles"),
 	EX_NIHILO("exnihilo", ExNihilo.class, "orePowdered", "oreBroken", "oreNetherBroken", "oreCrushed", "oreSand", "oreDust", "oreGravel", "oreNetherGravel");
 
 	final String modid;
