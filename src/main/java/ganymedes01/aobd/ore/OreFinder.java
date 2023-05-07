@@ -50,7 +50,7 @@ public class OreFinder {
 	}
 
 	public static void preInit() {
-		Collection<String> ores = getMetalsWithPrefixes("dust", "ingot");
+		Collection<String> ores = getMetalsWithPrefixes("nugget", "ingot");
 		for (String ore : ores)
 			Ore.newOre(ore);
 

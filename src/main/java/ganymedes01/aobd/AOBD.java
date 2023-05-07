@@ -104,11 +104,6 @@ public class AOBD {
 		// Register icons for Mekanism's gases
 		if (CompatType.MEKANISM.isEnabled() && event.map.getTextureType() == 0)
 			Mekanism.registerIcons(event.map);
-
-		// Register icons for molten metals
-		if (event.map.getTextureType() == 0)
-			if (CompatType.MARICULTURE.isEnabled())
-				RecipesModule.registerMoltenMetalIcons(event.map);
 	}
 
 	@SideOnly(Side.CLIENT)
