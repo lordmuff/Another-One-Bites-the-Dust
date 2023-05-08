@@ -46,26 +46,29 @@ public class Mekanism extends RecipesModule {
 		OreGas slurry = new OreGasAOBD(ore, name, "oregas." + name.toLowerCase()).setCleanGas(clean);
 		gasList.add(slurry);
 
-		for (ItemStack stack : OreDictionary.getOres("ore" + name))
+		for (ItemStack stack : OreDictionary.getOres("orebush" + name))
 			addEnrichmentChamberRecipe(stack, getOreStack("dust", ore, 2));
 		addEnrichmentChamberRecipe(getOreStack("dustDirty", ore), getOreStack("dust", ore));
 
 		addCrusherRecipe(getOreStack("clump", ore), getOreStack("dustDirty", ore));
 
 		Gas oxygen = GasRegistry.getGas("oxygen");
-		for (ItemStack stack : OreDictionary.getOres("ore" + name))
+		for (ItemStack stack : OreDictionary.getOres("orebush" + name))
 			addPurificationChamberRecipe(stack, oxygen, getOreStack("clump", ore, 3));
 		addPurificationChamberRecipe(getOreStack("shard", ore), oxygen, getOreStack("clump", ore));
 
 		Gas hydrogenChloride = GasRegistry.getGas("hydrogenChloride");
-		for (ItemStack stack : OreDictionary.getOres("ore" + name))
+
+		for (ItemStack stack : OreDictionary.getOres("orebush" + name))
 			addChemicalInjectionChamberRecipe(stack, hydrogenChloride, getOreStack("shard", ore, 4));
 		addChemicalInjectionChamberRecipe(getOreStack("crystal", ore), hydrogenChloride, getOreStack("shard", ore));
 
-		for (ItemStack stack : OreDictionary.getOres("ore" + name))
+		for (ItemStack stack : OreDictionary.getOres("orebush" + name))
 			addChemicalDissolutionChamberRecipe(stack, new GasStack(slurry, 1000));
 		addChemicalWasherRecipe(new GasStack(slurry, 1), new GasStack(slurry.getCleanGas(), 1));
 		addChemicalCrystallizerRecipe(new GasStack(slurry.getCleanGas(), 200), getOreStack("crystal", ore));
+
+
 	}
 
 	private static void addEnrichmentChamberRecipe(ItemStack input, ItemStack output) {

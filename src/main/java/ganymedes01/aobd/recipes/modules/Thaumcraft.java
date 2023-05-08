@@ -34,7 +34,8 @@ public class Thaumcraft extends RecipesModule {
 	public void initOre(Ore ore) {
 		String name = ore.name();
 		ItemStack cluster = getOreStack("cluster", ore);
-		for (ItemStack block : OreDictionary.getOres("ore" + name)) {
+
+		for (ItemStack block : OreDictionary.getOres("orebush" + name)) {
 			String s1 = Item.getIdFromItem(block.getItem()) + "," + block.getItemDamage();
 			String s2 = Item.getIdFromItem(cluster.getItem()) + "," + cluster.getItemDamage();
 			FMLInterModComms.sendMessage("Thaumcraft", "nativeCluster", s1 + "," + s2 + "," + 1);
@@ -56,13 +57,15 @@ public class Thaumcraft extends RecipesModule {
 		pages.add(new ResearchPage("tc.research_page.PUREORE.1"));
 		for (Ore ore : Ore.ores)
 			if (isOreEnabled(ore)) {
-				String name = ore.name();
+				Object catalyst = getOreStack("orebush", ore) + ore.name();
 				ItemStack cluster = getOreStack("cluster", ore);
+				if (catalyst != null) {
+					CrucibleRecipe recipe = ThaumcraftApi.addCrucibleRecipe("PUREORE", cluster, catalyst, new AspectList().merge(Aspect.METAL, 1).merge(Aspect.ORDER, 1));
 
-				CrucibleRecipe recipe = ThaumcraftApi.addCrucibleRecipe("PUREORE", cluster, "ore" + name, new AspectList().merge(Aspect.METAL, 1).merge(Aspect.ORDER, 1));
-				ConfigResearch.recipes.put("Pure" + name, recipe);
-				pages.add(new ResearchPage(recipe));
-				addedAtLeastOne = true;
+					ConfigResearch.recipes.put("Pure" + catalyst, recipe);
+					pages.add(new ResearchPage(recipe));
+				}
+					addedAtLeastOne = true;
 			}
 
 		if (addedAtLeastOne) {
